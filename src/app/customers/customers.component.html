@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer</title>
+  
+    <link rel="stylesheet" type ="text/css" href="customers.component.css">
+
+</head>
+<body background="/assets/image/back.jpg">
+  
+    <div class="container">
+       
+
+
+            <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>Address</th>
+                  <th>Id</th>
+                  
+
+
+                </tr>
+                <div></div>
+                <tr *ngFor="let customer of customerList">
+                  <td>{{customer.name}}</td>
+                  <td>{{customer.sex}}</td>
+                  <td>{{customer.address}}</td>
+                  <td>{{customer.customerId}}</td>
+                  <div class="card-body">
+                    <input [(ngModel)]="customer.name" placeholder="name"/>
+                    <br>
+                    <button class="btn btn-primary" (click)="onUpdate(customer.customerId)">Update</button>
+                    <button class="btn btn-primary" (click)="deleteCustomer(customer.name)">Delete</button>
+                   
+                    <!-- <input type="text" class="form-control" id="addNewCustomer" name="name" [(ngModel)]="newcustomer.name" > -->
+                    <!-- <button type="submit" class="btn btn-primary mb-3">Submit</button> -->
+
+
+                    <!-- <div class="add-card" *ngIf="type== 'add'">
+                      <div class="card-body">
+                        <form (ngSubmit)="addCustomer()">
+                          <div class="mb-3 row">
+                              <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="inputPassword" name="name" [(ngModel)]="newcustomer.name" >
+                              </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                        </form>
+                      </div>
+                    </div> -->
+
+
+
+
+                  </div>
+                </tr>
+                
+        </table>
+        
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  (ngSubmit)="updateProduct()" #f=ngForm >
+         
+
+        <div class="mb-1">
+            <br>
+            <label for="ProductName" class="form-label">  Name</label>
+            <input name= "name"type="text" class="form-control" #name="ngModel" id="ProductName"  required minlength="4" [(ngModel)]="selectedProduct.name">
+
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                class="alert">
+
+                <div *ngIf="name.errors?.['required']">
+                    Name is required.
+                </div>
+
+                <div *ngIf="name.errors?.['minlength']">
+                    Name must be at least 4 characters long.
+                </div>
+
+                    <!-- <div *ngIf="name.errors?.['forbiddenName']">
+                        Name cannot be Bob.
+                    </div> -->
+
+            </div>
+        </div>
+
+
+        <div class="mb-2">
+            <label stye for="Price" class="form-label"> Price</label>
+            <input name="price" type="number" class="form-control" id="Price"[(ngModel)]="selectedProduct.price">
+        </div>
+
+        <button type="submit" name="Submit"class="btn btn-primary" [disabled]="!f.valid">>Submit</button>
+
+      </form>
+</body>
+</html>

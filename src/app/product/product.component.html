@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <link rel="stylesheet" type ="text/css" href="product.component.css">
+
+</head>
+<body >
+  
+
+<!--  ---------------------  -->
+<div > 
+  <div id="container">
+  <div id="leftThing">
+    <div class="card" *ngFor="let product of productList" style="width: 18rem;">
+      <img [src]="product.imageUrl" class="card-img-top"  width="200" height="200" alt="Card image cap" >
+      <div class="card-body">
+        <!-- <h5 class="card-title">{{nike.name | uppercase}}</h5> -->
+        <!-- <h5 class="card-title">{{nike.name}}</h5> -->
+       
+        <input [(ngModel)]="product.name" placeholder="name"/>
+        <!-- <p class="card-text">Price: ${{product.price}}</p> -->
+        <p style="color: maroon;" class="card-text" *ngIf="product.price < 10">Price: ${{product.price}}  (*On Discount)</p>
+        <p class="card-text" *ngIf="product.price > 10">Price: ${{product.price}}</p>
+
+        
+       <!-- <p class="card-text">{{nike.description}}</p> -->
+
+        <!-- <div class="card" *ngFor="let product of productList" style="width: 18rem;">
+         <p class="card-text" *ngIf="product.price < 10">$ {{product.price}} (*On Discount)</p> -->
+
+
+        <button class="btn btn-primary" (click)="onViewDetail(product.id)">View Detail</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content">
+    <div class="card" *ngFor="let product of productList2" style="width: 18rem;">
+      <img  [src]="product.imageUrl" class="card-img-top" width="200" height="200" alt="Card image cap">
+      <div class="card-body">
+        <!-- <h5 class="card-title">{{airMax.name | uppercase}}</h5> -->
+        
+        <!-- <h5 class="card-title">{{airMax.name}}</h5> -->
+        
+        <input [(ngModel)]="product.name" placeholder="name"/>
+        <!-- <p class="card-text">Price: ${{product.price}}</p> -->
+        <p style="color: maroon;" class="card-text" *ngIf="product.price < 10">Price: ${{product.price}} (*On Discount)</p>
+        <p class="card-text" *ngIf="product.price > 10">Price: ${{product.price}}</p>
+
+
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <button class="btn btn-primary" (click)="onViewDetail(product.id)">View Detail</button>
+
+       
+      </div>
+    </div>
+  </div>
+
+  <div id="rightThing">
+    <div class="card" *ngFor="let product of productList" style="width: 18rem;">
+      <img [src]="product.imageUrl" class="card-img-top"  width="200" height="200"  alt="Card image cap">
+      <div class="card-body">
+        <!-- <h5 class="card-title">{{puma.name | uppercase}}</h5> -->
+        <!-- <h5 class="card-title">{{puma.name}}</h5> -->
+        <input [(ngModel)]="product.name" placeholder="name"/>
+        <!-- <p class="card-text">Price: ${{product.price}}</p> -->
+        <p style="color: maroon;" class="card-text" *ngIf="product.price < 10">Price: ${{product.price}} (*On Discount)</p>
+        <p class="card-text" *ngIf="product.price > 10">Price: ${{product.price}} </p>
+
+  
+        <p class="card-text"></p>
+        <button class="btn btn-primary" (click)="onViewDetail(product.id)">View Detail</button>
+      </div>
+    </div>
+  </div>
+
+    </div> <!--  -->
+
+</div>
+</body>
+</html>

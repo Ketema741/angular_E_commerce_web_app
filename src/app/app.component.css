@@ -1,0 +1,107 @@
+:root {
+    --primary-color: #007AF3;
+}
+
+body {
+    background: white;
+    margin: 0;
+    font-family: 'Poppins';
+}
+        
+.navbar {
+    background: #F2F2F2;
+    padding: 1em;
+}
+
+.logo {
+    text-decoration: none;
+    font-weight: bold;
+    color: magenta;
+    font-size: 1.3em;
+    display: inline-block;
+    margin-left: 0;
+    text-align: top;
+}
+
+
+nav {
+    display: none;
+}
+    
+.container {
+    display: flex;
+    place-content: space-between;
+}
+
+/* .mobile-menu {
+    cursor: pointer;
+} */
+
+a {
+    color: #444444;
+}
+
+ul {
+   list-style-type: none; 
+   padding: 0;
+}
+
+   
+
+
+        
+    a {
+        margin-left: 35px;
+        color: blue;
+        text-decoration: none;
+        display: block;
+        padding: 111.5em;
+        font-size: 1.3em;
+        text-align: right;
+    }
+
+    a:hover {
+        font-weight: bold;
+        
+    }
+    
+
+
+.navbar nav {
+    display: flex;
+    justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    width: 100%;
+    padding: 5px;
+}
+    ul {
+        display: flex;
+    }
+
+    a {
+        color: black;
+        font-size: 1em;
+        padding: .1em 1em;
+    }
+
+    ul.primary-nav {
+        margin: 0;
+    }
+
+    li.current a {
+        font-weight: bold;
+    }
+    li.go-premium-cta a {
+        color: var(--primary-color);
+        border: 3px solid var(--primary-color);
+        font-weight: bold;
+        border-radius: 5em;
+        margin-top: -.2em;
+    }
+        :hover {
+            background: white ;
+            color: var(--primary-color);
+        }
+    
